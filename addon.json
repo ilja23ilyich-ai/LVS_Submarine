@@ -9,6 +9,6 @@
     "ignore": [
         ".git/*",
         "README.md",
-        "lvs_base/*"
+        ".lvs_base/*"
     ]
 }
