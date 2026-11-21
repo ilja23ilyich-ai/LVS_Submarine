@@ -1,0 +1,7 @@
+{
+ "workspace": {
+		"library": [
+			"./.lvs_base/lua"
+		]
+	}
+}

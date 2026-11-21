@@ -1,0 +1,3 @@
+[submodule "lua/.lvs_base"]
+	path = lua/.lvs_base
+	url = https://github.com/SpaxscE/lvs_base.git

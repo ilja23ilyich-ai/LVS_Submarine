@@ -1,0 +1,14 @@
+{
+    "title": "[LVS] submorine",
+    "description": "",
+    "type": "vehicle",
+    "tags": [
+        "fun",
+        "water"
+    ],
+    "ignore": [
+        ".git/*",
+        "README.md",
+        "lvs_base/*"
+    ]
+}
