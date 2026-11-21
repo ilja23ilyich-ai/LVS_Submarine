@@ -48,18 +48,17 @@ function PHYS:SetBuoyancy(ratio)
 end
 
 function PHYS:Drive(force)
-    --self:  (vector(0, 0, -(force or 1000)), LocalPos)
-
+    self:AddLinarForce(Vector(0, 0, -(force or 1000)))
 end
 
-function PHYS:Surface()
-    --self:AppyLocalForce(vector(0, 0, -(force or 1000)), LocalPos)
+function PHYS:Surface(force)
+    self:AddLinarForce(Vector(0, 0, (force or 1000)))
 end
 
-function PHYS:Thrust()
-    
+function PHYS:Thrust(force)
+    self:AddLinarForce(Vector((force or 500), 0, 0))
 end
 
-function PHYS:Turn()
-    
+function PHYS:Turn(torque)
+    self:AddAngularForce(Vector(0,0,(torque or 300)))
 end
