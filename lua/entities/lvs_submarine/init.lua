@@ -1,7 +1,7 @@
 AddCSLuaFile("cl_init.lua")
 AddCSLuaFile("shared.lua")
 include("shared.lua")
-include("lua/uWater/uWater.lua")
+local uAPI =  include("lua/uWater/uWater.lua")
 
 function ENT:Initialize()
     self.BaseClass.Initialize(self)
@@ -37,8 +37,8 @@ function ENT:PhysicsSimulate(phys, deltaTime)
     if self.BaseClass and self.BaseClass.PhysicsSimulate then
         self.BaseClass.PhysicsSimulate(self, phys, deltaTime)
     end
-    if not self.PhysAPI then
-        self.PhysAPI = phys.Warp(self)
+    if not uAPI then
+        self.PhysAPI = uAPI.Wrap(self)
     end
     local api = self.PhysAPI
     if not api then return end
