@@ -62,3 +62,5 @@ end
 function PHYS:Turn(torque)
     self:AddAngularForce(Vector(0,0,(torque or 300)))
 end
+
+return PHYS
