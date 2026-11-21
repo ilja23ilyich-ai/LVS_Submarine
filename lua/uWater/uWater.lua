@@ -47,7 +47,7 @@ function PHYS:SetBuoyancy(ratio)
     self._phys:SetBioyancyRatio(self._buoyncy)   
 end
 
-function PHYS:Drive(force)
+function PHYS:Dive(force)
     self:AddLinarForce(Vector(0, 0, -(force or 1000)))
 end
 

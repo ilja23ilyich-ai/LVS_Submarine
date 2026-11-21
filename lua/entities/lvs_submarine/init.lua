@@ -30,4 +30,19 @@ function ENT:PhysicsSimulate(phys, deltaTime)
         self.PhysAPI = phys.warp(self)
     end
     local api = self.PhysAPI
+    if not api then return end
+    local driver = self:GetDriver()
+    if IsValid(driver) then
+       if driver:KeyDown(IN_JUMP) then api:Surface(1500) end
+       if driver:KeyDown(IN_DUCK) then api:Dive(1500) end
+       if driver:KeyDown(IN_FORWARD) then api:Thrust(800) end
+       if driver:KeyDown(IN_BACK) then api:Thrust(-800) end
+       if driver:KeyDown(IN_MOVELEFT) then api:Turn(800) end
+       if driver:KeyDown(IN_MOVERIGHT) then api:Turn(-800) end
+    end
+    local velocity = phys:GetVelocity()
+    local dragC = 0.3
+    local dragF = -velocity * dragC
+    api:AddLinarForce(dragF)
+    return api._angularForce, api._leinarForce, SIM_LOCAL_FORCE
 end
