@@ -2,7 +2,10 @@ include("shared.lua")
 
 function ENT:Initialize()
     self.BaseClass.Initialize(self)
-    
+    self.EngineSound =CreateSound(self, "lvs_submaribne/sonar.ogg")
+    if self.EngineSounnd then
+
+    end
 end
 
 function ENT:Draw(flags)

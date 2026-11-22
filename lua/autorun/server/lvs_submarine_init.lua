@@ -4,6 +4,11 @@ hook.Add("Initialize", "LVS_Submarine_Validate", function()
     if not Validator.CheckThisAddon() then MsgC("[LVS Submarine] {WARNING!} Check of THIS ADDON was not succsesful! CANNOT work correctly\n") else MsgC("[LVS Submarine] Succes\n") end
 end)
 
+resource.AddFile("sound/lvs_submarine/sonar.ogg")
+resource.AddFile("sound/lvs_submarine/start.ogg")
+resource.AddFile("sound/lvs_submarine/shutdown.ogg")
+
+
 /*
 *Раскоментировать при локальном запуске в мультиплеере
 

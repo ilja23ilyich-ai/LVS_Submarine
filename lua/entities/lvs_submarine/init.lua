@@ -18,6 +18,8 @@ function ENT:Initialize()
     end
 end
 
+
+
 function ENT:OnSpawn(PObj)
     local DriverSeat = self:AddDriverSeat(Vector(0,0,50), Angle(0,0,0))
     if IsValid(DriverSeat) then
