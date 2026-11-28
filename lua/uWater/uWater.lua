@@ -2,6 +2,12 @@
 
 local PHYS = {}
 
+--@class uWater
+--@field _ent Entity
+--@field _phys Physobj
+--@field mass number
+--@field _buoyncy number
+
 local function CreatePhys(physObj, ent)
     local wrapper = {
         _phys = physObj,
@@ -11,7 +17,7 @@ local function CreatePhys(physObj, ent)
         _leinarForce = Vector(0,0,0),
         _angularForce = Vector(0,0,0)
     }
-    return setmetatable(wrapper, {_index=PHYS})
+    return setmetatable(wrapper, {__index=PHYS})
 end
 
 function PHYS:AddLinarForce(force)
@@ -35,7 +41,8 @@ end
 
 function PHYS:AppyLocalForce(LocalForce,LocalPos)
     local phys = self._phys
-    if not IsValid(phys) then return nil end
+    if not IsValid(phys) then return end
+    if not IsValid(self._ent) then return end
 
     local worldForce = self._ent:LocalToWorldVector(LocalForce)
     local worldPos = self._ent:LocalToWorld(LocalPos)
@@ -43,6 +50,7 @@ function PHYS:AppyLocalForce(LocalForce,LocalPos)
     phys:ApplyForceOffset(worldForce, worldPos)
 end
 function PHYS:SetBuoyancy(ratio)
+    if not IsValid() then return end
     self._buoyncy = math.Clamp(ratio, 0, 2) 
     self._phys:SetBioyancyRatio(self._buoyncy)   
 end
