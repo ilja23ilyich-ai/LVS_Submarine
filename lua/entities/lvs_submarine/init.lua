@@ -1,7 +1,7 @@
 AddCSLuaFile("cl_init.lua")
 AddCSLuaFile("shared.lua")
 include("shared.lua")
-local uAPI =  include("lua/uWater/uWater.lua")
+local uAPI =  include("uWater/uWater.lua")
 
 function ENT:Initialize()
     self.BaseClass.Initialize(self)
