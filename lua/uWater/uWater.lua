@@ -50,7 +50,8 @@ function PHYS:AppyLocalForce(LocalForce,LocalPos)
     phys:ApplyForceOffset(worldForce, worldPos)
 end
 function PHYS:SetBuoyancy(ratio)
-    if not IsValid() then return end
+    if not IsValid(self._buoyncy) then return end
+    if not IsValid(self._phys) then return end
     self._buoyncy = math.Clamp(ratio, 0, 2) 
     self._phys:SetBioyancyRatio(self._buoyncy)   
 end
