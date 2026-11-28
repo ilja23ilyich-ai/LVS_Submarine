@@ -15,7 +15,11 @@ function ENT:Initialize()
     if IsValid(phys) then
        phys:Wake()
        phys:SetMass(self.Weight) 
+       phys:SetBuoyancyRatio(0.5)
     end
+    if not uAPI then
+        self.PhysAPI = uAPI.Wrap(self)
+    end 
 end
 
 
