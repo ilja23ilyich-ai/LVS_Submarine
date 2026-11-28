@@ -1,8 +1,8 @@
 AddCSLuaFile()
 
-DEFINE_BASECLASS("base_lvs_powerboat")
+DEFINE_BASECLASS("lvs_base_powerboat")
 
-ENT.Base = "base_lvs_powerboat"
+ENT.Base = "lvs_base_powerboat"
 ENT.Type = "anim"
 ENT.PrintName = "Submarine"
 ENT.Category = "LVS"
